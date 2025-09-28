@@ -10,7 +10,7 @@ class StringCalculatorTDDKata:
 
         if "," in numbers:
             parts = numbers.split(",")
-            return int(parts[0]) + int(parts[1])
+            return sum(int(x) for x in parts)
 
         return int(numbers)
         
