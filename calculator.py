@@ -14,10 +14,11 @@ class StringCalculatorTDDKata:
             delimiter_part = parts[0][2:]
             
             if delimiter_part.startswith("[") and delimiter_part.endswith("]"):
-                delimiter = re.escape(re.findall(r'\[(.*?)\]', delimiter_part)[0])
+                delimiters = re.findall(r'\[(.*?)\]', delimiter_part)
+                delimiter = "|".join(map(re.escape, delimiters))
             else:
                 delimiter = re.escape(delimiter_part)
-                
+            
             numbers = parts[1]
 
         num_list = re.split(delimiter + "|,|\n", numbers)
