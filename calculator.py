@@ -20,6 +20,7 @@ class StringCalculatorTDDKata:
         if negatives:
             raise Exception(f"Negatives not allowed: {','.join(map(str, negatives))}")
         
-        return sum(int(x) for x in num_list)
+        num_list = [int(n) for n in num_list if int(n) <= 1000]
+        return sum(num_list)
         
     
