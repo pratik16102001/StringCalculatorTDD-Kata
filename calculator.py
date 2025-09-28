@@ -15,6 +15,11 @@ class StringCalculatorTDDKata:
             numbers = parts[1]
 
         num_list = re.split(delimiter + "|,|\n", numbers)
+
+        negatives = [int(n) for n in num_list if int(n) < 0]
+        if negatives:
+            raise Exception(f"Negatives not allowed: {','.join(map(str, negatives))}")
+        
         return sum(int(x) for x in num_list)
         
     
