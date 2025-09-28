@@ -27,3 +27,7 @@ class TestStringCalculator:
     def test_multiple_numbers_with_newline(self):
         assert self.calc.add("1\n2,3") == 6
         assert self.calc.add("4\n5\n6,7") == 22
+
+    def test_custom_delimiter(self):
+        assert self.calc.add("//;\n1;2") == 3
+        assert self.calc.add("//|\n4|5|6") == 15
