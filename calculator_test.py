@@ -44,3 +44,6 @@ class TestStringCalculator:
 
     def test_ignore_numbers_greater_than_1000(self):
         assert self.calc.add("2,1001") == 2
+
+    def test_delimiters_of_any_length(self):
+        assert self.calc.add("//[***]\n1***2***3") == 6
