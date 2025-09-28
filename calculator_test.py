@@ -47,3 +47,6 @@ class TestStringCalculator:
 
     def test_delimiters_of_any_length(self):
         assert self.calc.add("//[***]\n1***2***3") == 6
+
+    def test_multiple_delimiters(self):
+        assert self.calc.add("//[*][%]\n1*2%3") == 6
