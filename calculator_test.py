@@ -14,4 +14,7 @@ class TestStringCalculator:
         assert self.calc.add("3") == 3
         assert self.calc.add("5") == 5
 
-        
+    def test_two_numbers_comma_seprated_return_sum(self):
+        assert self.calc.add("1,2") == 3
+        assert self.calc.add("3,4") == 7
+        assert self.calc.add("995, 995") == 1990
