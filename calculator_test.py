@@ -18,3 +18,8 @@ class TestStringCalculator:
         assert self.calc.add("1,2") == 3
         assert self.calc.add("3,4") == 7
         assert self.calc.add("995, 995") == 1990
+
+    def test_multiple_numbers_comma_separated_return_sum(self):
+        assert self.calc.add("1,2,3,4") == 10
+        assert self.calc.add("5,10,15") == 30
+        assert self.calc.add("7,3,2,8,10") == 30
