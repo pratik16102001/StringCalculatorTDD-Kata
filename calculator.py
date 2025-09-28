@@ -1,4 +1,4 @@
-
+import re
 
     
 class StringCalculatorTDDKata:
@@ -8,10 +8,7 @@ class StringCalculatorTDDKata:
         if numbers == "":
             return 0
 
-        if "," in numbers:
-            parts = numbers.split(",")
-            return sum(int(x) for x in parts)
-
-        return int(numbers)
+        parts = re.split(r',|\n', numbers)
+        return sum(int(x) for x in parts)
         
     
