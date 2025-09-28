@@ -41,3 +41,6 @@ class TestStringCalculator:
         with pytest.raises(Exception) as e:
             self.calc.add("-5,-10")
         assert str(e.value) == "Negatives not allowed: -5,-10"
+
+    def test_ignore_numbers_greater_than_1000(self):
+        assert self.calc.add("2,1001") == 2
