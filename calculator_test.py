@@ -1,3 +1,4 @@
+import pytest
 from calculator import StringCalculatorTDDKata
 
 
@@ -31,3 +32,12 @@ class TestStringCalculator:
     def test_custom_delimiter(self):
         assert self.calc.add("//;\n1;2") == 3
         assert self.calc.add("//|\n4|5|6") == 15
+
+    def test_negative_numbers_raise_exception(self):
+        with pytest.raises(Exception) as e:
+            self.calc.add("-2,-5")
+        assert str(e.value) == "Negatives not allowed: -2,-5"
+
+        with pytest.raises(Exception) as e:
+            self.calc.add("-5,-10")
+        assert str(e.value) == "Negatives not allowed: -5,-10"
